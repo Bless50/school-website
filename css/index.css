@@ -1,0 +1,228 @@
+
+/*
+ css stands for cascading styling sheet used to make webpages beautiful
+  css style for the main page which is homepage of the website
+  index.html is homepage of the website.
+*/
+
+/* the style below are to work for the entire body of the page*/
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:#FFFFFF ;
+    color: #666;
+    font-size: 17px;
+}
+
+/* the styles below are for the navbar section */
+/* css style for hover effect for the links  */
+.offcanvas-body a:hover {
+    color: #00A874;
+}
+
+/* style below are for the links in the navbar */
+.offcanvas-body{
+  font-size: 17px;
+  font-weight: 549;
+  color: #333;
+}
+
+/* style to change the school logo */
+.navbar-brand{
+    color: #00A874;
+    font-weight: 700;
+    font-size: 25px;
+}
+.navbar-brand:hover{
+  color: #049164;
+}
+
+/* the style below is for the line under the navbar */
+hr{
+  margin: 0;
+  opacity: 0.1;
+}
+
+/* the style below is for the about us section */
+.heading{
+  color: #049164;
+}
+/* for the button */
+.btn{
+  margin: 5px;
+  padding: 8px 48px;
+  font-size:17px;
+}
+/* for the text in the about us section */
+p{
+  color: #666;
+}
+/* for the space above the about us section */
+#spaces{
+  margin-top: 26px;
+  margin-bottom: 80px;
+}
+/* the style below are for the Academic section */
+.depTEXT{
+  margin-top: 48px;
+  text-align: center;
+  color: #00633E;
+}
+
+/* the style below is for the admision section */
+.card-body h2{
+  margin-top: 32px;
+}
+.card-body a {
+  margin-bottom: 32px;
+}
+
+/* the style below are for why choose us section */
+#chooseUsHeading {
+  padding-top: 60px;
+  margin-bottom: 56px;
+  color: #00633E;
+}
+
+#marginUnderList {
+  padding-bottom: 40px;
+  font-size: 17px;
+}
+/* the style below is for the testimonial section */
+#spaceUnderTestimonials{
+  padding-bottom: 56px;
+}
+
+
+/* the style below are for the text on the hero image */
+.carousel-caption-title {
+  font-size: 1.8rem;
+}
+
+.carousel-caption-subtitle {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .carousel-caption-title {
+    font-size: 1.3rem;
+  }
+
+  .carousel-caption-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption a.btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-caption-title {
+    font-size: 1rem;
+  }
+
+  .carousel-caption-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .carousel-caption a.btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+}
+
+/* to center the second text on the second  hero image  */
+#space{
+  bottom: 20%;
+}
+
+/* style for the hver effect */
+.btn-hover {
+  background-color: #00633E;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-hover:hover {
+  background-color: #004d2f;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* style for the heigt of the image */
+.custom-img {
+  max-height: 100vh;
+  /* For tablets and smaller screens */
+}
+
+/* style to reduce the height of the image of smaller screen */
+@media (max-width: 992px) {
+  .custom-img {
+    max-height: 64vh;
+    /* For tablets and smaller screens */
+  }
+}
+
+/* style for the about us page */
+/* the style below are to work for the entire body of the page*/
+
+/* the styles below are for the navbar section */
+/* css style for hover effect for the links  */
+.offcanvas-body a:hover {
+  color: #00A874;
+}
+
+/* style below are for the links in the navbar */
+.offcanvas-body {
+  font-size: 17px;
+  font-weight: 549;
+  color: #333;
+}
+
+/* style to change the school logo */
+.navbar-brand {
+  color: #00A874;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.navbar-brand:hover {
+  color: #049164;
+}
+
+/* the style below is for the line under the navbar */
+hr {
+  margin: 0;
+  opacity: 0.1;
+}
+
+/* style for the heigt of the image */
+.custom-img {
+  max-height: 100vh;
+  /* For tablets and smaller screens */
+}
+
+/* style to reduce the height of the image of smaller screen */
+@media (max-width: 992px) {
+  .custom-img {
+    max-height: 90vh;
+    /* For tablets and smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-img {
+    max-height: 64vh;
+    /* For tablets and smaller screens */
+  }
+}
+/* style to center the text on the hero image */
+#centerThetext {
+  bottom: 30%;
+
+}
+

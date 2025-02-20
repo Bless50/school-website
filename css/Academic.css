@@ -1,0 +1,45 @@
+
+
+/* the style below are to work for the entire body of the page*/
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #666;
+    font-size: 17px;
+}
+
+/* the styles below are for the navbar section */
+/* css style for hover effect for the links  */
+.offcanvas-body a:hover {
+    color: #00A874;
+}
+
+/* style below are for the links in the navbar */
+.offcanvas-body {
+    font-size: 17px;
+    font-weight: 549;
+    color: #333;
+}
+
+/* style to change the school logo */
+.navbar-brand {
+    color: #00A874;
+    font-weight: 700;
+    font-size: 25px;
+}
+.navbar-brand:hover {
+    color: #049164;
+}
+/* the style below is for the line under the navbar */
+hr {
+    margin: 0;
+    opacity: 0.1;
+}
+
+/* style to center the text on the hero image */
+#centerThetext {
+    bottom: 30%;
+
+}
