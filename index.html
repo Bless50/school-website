@@ -45,16 +45,17 @@
     font-weight: bold;
     position: relative;
   }
+
   .nav-link.active::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background-color: #00A874;
-        transition: width 0.3s ease;
-    }
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #00A874;
+    transition: width 0.3s ease;
+  }
 
   .feature-item {
     display: flex;
@@ -78,10 +79,11 @@
     margin: 0;
     color: #444;
   }
+
+  
 </style>
 
 <body>
-
   <!-- 
  the navbar is the first thing you see at the top of a webpage
  that contains links which takes you to other pages in the website
@@ -135,21 +137,24 @@
     <!-- the hero section  -->
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
       <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images/youthday/IMG_5771.webp" class="d-block w-100 img-fluid" style="max-height: 100vh; "
-            alt="iniesat youth day celebration">
-          <div class="carousel-caption d-lg-block">
-            <h3 class="carousel-caption-title" style="color: #FFFFFF;">
-              International Institute of Engineering, Science, Art and Technology
-            </h3>
-            <h4 class="carousel-caption-subtitle fw-bold " style="color:#006400">Learners Today Leaders Tomorrow.</h4>
-            <a href="AboutUs.html" class="btn text-white btn-hover" style="background-color: #118a6a;">Learn More</a>
+        <div class="carousel-item active ">
+          <img src="images/youthday/IMG_5771.webp" class="d-block w-100 img-fluid custom-img" alt="iniesat youth day celebration">
+          <div class="carousel-caption d-block"> <!-- Changed from d-lg-block to d-block for all screen sizes -->
+              <h4 class="carousel-caption-title" style="color: #FFFFFF;">
+                  INTERNATIONAL INSTITUTE OF ENGINEERING, SCIENCE, ART AND TECHNOLOGY
+              </h4>
+              <h4 class="carousel-caption-subtitle fw-bold" style="color:#006400">
+                  Learners Today Leaders Tomorrow.
+              </h4>
+              <a href="AboutUs.html" class="btn text-white btn-hover" style="background-color: #118a6a;">
+                  Learn More
+              </a>
           </div>
-        </div>
+      </div>
         <div class="carousel-item">
           <img src="images/building4.webp" class="d-block w-100 img-fluid custom-img" style=" object-fit: cover;"
             alt="iniesat school building">
-          <div class="carousel-caption  d-lg-block" id="space">
+          <div class="carousel-caption  d-block" id="space">
             <h2>Discover Our Programs</h2>
             <a href="Academic.html" class="btn text-white btn-hover" style="background-color: #00A874;">Take a Tour</a>
           </div>
@@ -567,7 +572,7 @@
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner" id="spaceUnderTestimonials">
           <div class="carousel-item active">
-            <img src="images/testimony1.webp" class="d-block mx-auto  rounded-circle" height="120px" width="120px"
+            <img src="images/testimony1.webp" class="d-block mx-auto img-fluid rounded-circle" height="120px" width="120px"
               alt="testimonials by Mundi" loading="lazy">
             <h6 class="text-center mt-3">Mundi Milton Mbigha </h6>
             <p class="text-center">
@@ -583,7 +588,7 @@
             </p>
           </div>
           <div class="carousel-item">
-            <img src="images/testinmony3.webp" class="d-block  mx-auto rounded-circle" height="120px" width="120px"
+            <img src="images/testinmony3.webp" class="d-block img-fluid mx-auto rounded-circle" height="120px" width="120px"
               alt="testimonials by smartsana">
             <h6 class="text-center mt-3">SmartSana Energies</h6>
             <p class="text-center">
