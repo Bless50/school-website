@@ -76,10 +76,18 @@
 
     /* style to make the content in the tabs scrollable */
     .scrollable-tab-content {
-        /* Adjust the height based on your header's total height.
-        For example, if your hero and navbar take 150px, subtract that from 100vh */
-        max-height: calc(100vh - 150px);
+        height: calc(100vh - 350px); /* Adjust height to leave space for footer */
         overflow-y: auto;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Style for horizontal lines */
+   
+    /* Container for tab content */
+    .tab-content-container {
+        position: relative;
+        margin-bottom: 4rem; /* Add space before footer */
     }
 </style>
 
@@ -216,7 +224,7 @@
                         </li>
                     </ul>
                     <!-- the line under -->
-                    <hr class="mb-3">
+                   
 
                     <!-- Tab content -->
                     <div class="scrollable-tab-content">
