@@ -180,23 +180,23 @@ p {
   }
 }
 
-@media (max-width: 488px) {
+@media (max-width: 300px) {
   .custom-img{
-    height: 50vh;
+    height: 70vh;
     width: 100%;
     object-fit: contain;
   }
 
   .carousel-caption-title {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .carousel-caption-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .carousel-caption {
-    bottom: 1%;
+    bottom: 0.5%;
   }
 
   #space {
@@ -205,7 +205,8 @@ p {
 
   .carousel-caption a {
     font-size: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
+    padding: 5px 5px;
   }
 }
 
