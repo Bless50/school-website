@@ -106,129 +106,23 @@ p {
 }
 
 
-/* Base styles for hero section images */
-.custom-img {
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  /* Full viewport height by default */
-  object-fit: cover;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Text styles with better responsive scaling */
-.carousel-caption-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  /* places text above the overlay */
 }
 
-.carousel-caption-subtitle {
-  font-size: 2rem;
-  margin-bottom: 2rem;
+.btn:hover {
+  background-color: #0d6952 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-.carousel-caption a {
-  font-size: 1.2rem;
-  margin-bottom: 3rem;
-}
-
-#space {
-  bottom: 25%;
-}
-
-/* Responsive breakpoints */
-@media (max-width: 992px) {
-  .custom-img {
-    height: 90vh;
-    /* Reduce height for tablets */
-  }
-
-  .carousel-caption-title {
-    font-size: 1.5rem;
-  }
-
-  .carousel-caption-subtitle {
-    font-size: 1.5rem;
-  }
-
-  .carousel-caption {
-    bottom: 10%;
-  }
-}
-
-@media (max-width: 768px) {
-  .custom-img {
-    height: 75vh;
-    /* Further reduce height for mobile */
-    width: 100%;
-    object-fit: contain;
-  }
-
-  .carousel-caption-title {
-    font-size: 1rem;
-  }
-
-  .carousel-caption-subtitle {
-    font-size: 1rem;
-  }
-
-  .carousel-caption {
-    bottom: 1%;
-  }
-
-  #space {
-    bottom: 10%;
-  }
-
-  .carousel-caption a {
-    font-size: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 300px) {
-  .custom-img{
-    height: 70vh;
-    width: 100%;
-    object-fit: contain;
-  }
-
-  .carousel-caption-title {
-    font-size: 0.7rem;
-  }
-
-  .carousel-caption-subtitle {
-    font-size: 0.7rem;
-  }
-
-  .carousel-caption {
-    bottom: 0.5%;
-  }
-
-  #space {
-    bottom: 10%;
-  }
-
-  .carousel-caption a {
-    font-size: 0.5rem;
-    margin-bottom: 5rem;
-    padding: 5px 5px;
-  }
-}
-
-/* style for the hver effect */
-.btn-hover {
-  background-color: #00633E;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.btn-hover:hover {
-  background-color: #004d2f;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-/* the styles below are for the navbar section */
-/* css style for hover effect for the links  */
-

@@ -14,6 +14,7 @@
     .tab-pane {
         margin-bottom: 2rem;
     }
+
     .tab-content {
         border-top: none;
         padding: 20px;
@@ -29,6 +30,7 @@
         font-weight: bold;
         position: relative;
     }
+
     .nav-link.active::after {
         content: '';
         position: absolute;
@@ -39,6 +41,7 @@
         background-color: #00A874;
         transition: width 0.3s ease;
     }
+
     /* style for the footer */
     .col-lg {
         margin-bottom: 20px;
@@ -68,18 +71,107 @@
 
     /* style to make the content in the tabs scrollable */
     .scrollable-tab-content {
-        height: calc(100vh - 350px); /* Adjust height to leave space for footer */
+        height: calc(100vh - 350px);
+        /* Adjust height to leave space for footer */
         overflow-y: auto;
         padding-bottom: 2rem;
         margin-bottom: 2rem;
     }
 
     /* Style for horizontal lines */
-   
+
     /* Container for tab content */
     .tab-content-container {
         position: relative;
-        margin-bottom: 4rem; /* Add space before footer */
+        margin-bottom: 4rem;
+        /* Add space before footer */
+    }
+
+    .hero-section {
+        height: 100vh;
+        background: url("images/academichero.jpg") no-repeat center center;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+        /* ensures any overflow is hidden on smaller devices */
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        /* places text above the overlay */
+    }
+
+    .hero-content h2 {
+        font-size: 4rem;
+    }
+    .btn:hover {
+        background-color: #0d6952 !important;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ---------------------------------------------
+   1) Medium screens and below (max-width: 992px)
+   --------------------------------------------- */
+    @media (max-width: 992px) {
+
+        /* Slightly reduce hero height for tablets */
+        .hero-section {
+            height: 90vh;
+        }
+
+        /* Scale down headings */
+        .hero-content h2 {
+            font-size: 4rem;
+        }
+
+    }
+
+    /* ---------------------------------------------
+   2) Tablets and below (max-width: 768px)
+   --------------------------------------------- */
+    @media (max-width: 768px) {
+        .hero-section {
+            height: 75vh;
+            width: 100%;
+            object-fit: contain;
+            background-position: center;
+
+        }
+
+        /* Further reduce heading sizes */
+        .hero-content h2 {
+            font-size: 3rem;
+        }
+
+    }
+
+    /* ---------------------------------------------
+   3) Mobile and below (max-width: 576px)
+   --------------------------------------------- */
+    @media (max-width: 576px) {
+        .hero-section {
+            height: 60vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-content h2 {
+            font-size: 2rem;
+        }
     }
 </style>
 
@@ -131,108 +223,178 @@
             </div>
         </div>
     </nav>
-
     <!-- the line under the navbar -->
     <hr>
-
-    <!-- hero section -->
-   <section>
-     
-   </section>
-
+    <!-- HERO SECTION -->
+    <section class="hero-section text-white d-flex align-items-center">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-center mt-5">
+            <h2 class="display-5 fw-bold mt-5 responsive-text">
+             ACADEMIC
+            </h2>
+        </div>
+    </section>
     <!-- Engineering/Business/Bio-Medical/technology Section -->
-   <section>
-    <div class="container-fluid" style="background-color: #F7F7F7;">
-        <div class="container">
-            <div class="row">
-                <!-- content div -->
-                <div class="col">
-                    <!-- the headings -->
-                    <ul class="nav nav-tabs sticky-top" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <!-- engineering heading -->
-                            <h2>
-                                <a class="nav-link active fw-bold " id="engineering-tab" data-bs-toggle="tab"
-                                    href="#engineering" role="tab" aria-controls="engineering" aria-selected="true"
-                                    style="color: #00633E;">
-                                    Engineering
-                                </a>
-                            </h2>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <!-- Business heading -->
-                            <h2>
-                                <a class="nav-link fw-bold" id="business-tab" data-bs-toggle="tab" href="#business"
-                                    role="tab" aria-controls="business" aria-selected="false" style="color: #00633E;">
-                                    Business
-                                </a>
-                            </h2>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <!-- bio-medical heading  -->
-                            <h2>
-                                <a class="nav-link fw-bold" id="biomedical-tab" data-bs-toggle="tab" href="#biomedical"
-                                    role="tab" aria-controls="biomedical" aria-selected="false" style="color: #00633E;">
-                                    Bio-Medical
-                                </a>
-                            </h2>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <!--   Technology heading  -->
-                            <h2>
-                                <a class="nav-link fw-bold" id="Technology-tab" data-bs-toggle="tab" href="#Technology"
-                                    role="tab" aria-controls="Technology" aria-selected="false" style="color: #00633E;">
-                                    Technology
-                                </a>
-                            </h2>
-                        </li>
-                    </ul>
-                    <!-- Tab content -->
-                    <div class="scrollable-tab-content">
-                        <div class="tab-content" id="myTabContent">
-                            <!-- Engineering content -->
-                            <div class="tab-pane fade show active" id="engineering" role="tabpanel"
-                                aria-labelledby="engineering-tab">
-                                <h4 class="fw-bold mt-2">School Of Engineering </h4>
+    <section>
+        <div class="container-fluid" style="background-color: #F7F7F7;">
+            <div class="container">
+                <div class="row">
+                    <!-- content div -->
+                    <div class="col">
+                        <!-- the headings -->
+                        <ul class="nav nav-tabs sticky-top" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <!-- engineering heading -->
+                                <h2>
+                                    <a class="nav-link active fw-bold " id="engineering-tab" data-bs-toggle="tab"
+                                        href="#engineering" role="tab" aria-controls="engineering" aria-selected="true"
+                                        style="color: #00633E;">
+                                        Engineering
+                                    </a>
+                                </h2>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <!-- Business heading -->
+                                <h2>
+                                    <a class="nav-link fw-bold" id="business-tab" data-bs-toggle="tab" href="#business"
+                                        role="tab" aria-controls="business" aria-selected="false"
+                                        style="color: #00633E;">
+                                        Business
+                                    </a>
+                                </h2>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <!-- bio-medical heading  -->
+                                <h2>
+                                    <a class="nav-link fw-bold" id="biomedical-tab" data-bs-toggle="tab"
+                                        href="#biomedical" role="tab" aria-controls="biomedical" aria-selected="false"
+                                        style="color: #00633E;">
+                                        Bio-Medical
+                                    </a>
+                                </h2>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <!--   Technology heading  -->
+                                <h2>
+                                    <a class="nav-link fw-bold" id="Technology-tab" data-bs-toggle="tab"
+                                        href="#Technology" role="tab" aria-controls="Technology" aria-selected="false"
+                                        style="color: #00633E;">
+                                        Technology
+                                    </a>
+                                </h2>
+                            </li>
+                        </ul>
+                        <!-- Tab content -->
+                        <div class="scrollable-tab-content">
+                            <div class="tab-content" id="myTabContent">
+                                <!-- Engineering content -->
+                                <div class="tab-pane fade show active" id="engineering" role="tabpanel"
+                                    aria-labelledby="engineering-tab">
+                                    <h4 class="fw-bold mt-2">School Of Engineering </h4>
 
-                                <!-- HND Section -->
-                                <div class="row mt-2">
-                                    <!-- Content for HND -->
+                                    <!-- HND Section -->
                                     <div class="row mt-2">
-                                        <h5 class="fw-bold  text-center py-4" style="color: #DF5E5E;">
-                                            HIGHER NATIONAL
-                                            DIPLOMA(HND) : BACC/A LEVELS + 2 YEARS
+                                        <!-- Content for HND -->
+                                        <div class="row mt-2">
+                                            <h5 class="fw-bold  text-center py-4" style="color: #DF5E5E;">
+                                                HIGHER NATIONAL
+                                                DIPLOMA(HND) : BACC/A LEVELS + 2 YEARS
+                                            </h5>
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                    <span>
+                                                        <i class="bi bi-droplet-fill me-2"></i>
+                                                    </span>
+                                                    PETROLEUM AND MINING
+                                                    ENGINEERING
+                                                </h5>
+                                                <li>Petroleum system and Exploitation</li>
+                                                <li>Drilling Technology</li>
+                                                <li>Petroleum Logistics</li>
+                                                <li>Applied Geology</li>
+                                                <li>Quarries Operation</li>
+                                            </div>
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                    <span>
+                                                        <i class="bi-building-fill"></i>
+                                                    </span>
+                                                    CIVIL ENGINEERING
+                                                </h5>
+                                                <li>Topography</li>
+                                                <li>Urban Planning</li>
+                                                <li>Civil Engineering Technology</li>
+                                                <li>Geotechnics</li>
+                                                <li>Building Science And Technology</li>
+                                                <li>Real Estate Maintenace</li>
+                                            </div>
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                    <span>
+                                                        <i class="bi-tree-fill"></i>
+                                                    </span>
+                                                    AGRICULTURE AND ENVIROMENTAL
+                                                    SCIENCE
+                                                </h5>
+                                                <li>Agriculture And Food Science</li>
+                                                <li>Animal Production Tech</li>
+                                                <li>Crop production Tech</li>
+                                                <li>Agropasttoral Adviser</li>
+                                                <li>Agriculture Production Tech</li>
+                                                <li>Agriculture Entrepreneur Tech</li>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- second row -->
+                                        <div class="row mt-3">
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                    <span>
+                                                        <i class="bi-lightning-fill"></i>
+                                                    </span>
+                                                    ELECTRICAL AND ELECTRONIC
+                                                    ENGINEERINGS
+                                                </h5>
+                                                <li>Electronic</li>
+                                                <li>Electrotechnic</li>
+                                                <li>Electrical Power System</li>
+                                                <li>Maintenace Of Electrical Power systems</li>
+                                            </div>
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                    <span>
+                                                        <i class="bi-flask-fill"></i>
+                                                    </span>
+                                                    CHEMICAL ENGINEERING
+                                                </h5>
+                                                <li>Chemical Manufacturing</li>
+                                                <li>CHemical Process Technology</li>
+                                                <li>Chemical Laboratorys</li>
+                                            </div>
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                    <span>
+                                                        <i class="bi-gear-fill"></i>
+                                                    </span>
+                                                    MECHANICAL ENGINEERING
+                                                </h5>
+                                                <li>Mechanical Manufacturing</li>
+                                                <li>Mechanical Construction</li>
+                                                <li>Boiler, Making And Welding</li>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+
+                                    <!-- Bachelors Section -->
+                                    <div class="row mt-2">
+                                        <h5 class="fw-bold text-center py-4" style="color: #DF5E5E;">BACHELORS DEGREE :
+                                            HND
+                                            /
+                                            BTS + 1 YEARS
                                         </h5>
                                         <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
-                                                <span>
-                                                    <i class="bi bi-droplet-fill me-2"></i>
-                                                </span>
-                                                PETROLEUM AND MINING
-                                                ENGINEERING
-                                            </h5>
-                                            <li>Petroleum system and Exploitation</li>
-                                            <li>Drilling Technology</li>
-                                            <li>Petroleum Logistics</li>
-                                            <li>Applied Geology</li>
-                                            <li>Quarries Operation</li>
-                                        </div>
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
-                                                <span>
-                                                    <i class="bi-building-fill"></i>
-                                                </span>
-                                                CIVIL ENGINEERING
-                                            </h5>
-                                            <li>Topography</li>
-                                            <li>Urban Planning</li>
-                                            <li>Civil Engineering Technology</li>
-                                            <li>Geotechnics</li>
-                                            <li>Building Science And Technology</li>
-                                            <li>Real Estate Maintenace</li>
-                                        </div>
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                            <h5 class="fw-bold mt-2" style="color: #00A874;">
                                                 <span>
                                                     <i class="bi-tree-fill"></i>
                                                 </span>
@@ -241,169 +403,12 @@
                                             </h5>
                                             <li>Agriculture And Food Science</li>
                                             <li>Animal Production Tech</li>
-                                            <li>Crop production Tech</li>
-                                            <li>Agropasttoral Adviser</li>
-                                            <li>Agriculture Production Tech</li>
-                                            <li>Agriculture Entrepreneur Tech</li>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <!-- second row -->
-                                    <div class="row mt-3">
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
-                                                <span>
-                                                    <i class="bi-lightning-fill"></i>
-                                                </span>
-                                                ELECTRICAL AND ELECTRONIC
-                                                ENGINEERINGS
-                                            </h5>
-                                            <li>Electronic</li>
-                                            <li>Electrotechnic</li>
-                                            <li>Electrical Power System</li>
-                                            <li>Maintenace Of Electrical Power systems</li>
-                                        </div>
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
-                                                <span>
-                                                    <i class="bi-flask-fill"></i>
-                                                </span>
-                                                CHEMICAL ENGINEERING
-                                            </h5>
-                                            <li>Chemical Manufacturing</li>
-                                            <li>CHemical Process Technology</li>
-                                            <li>Chemical Laboratorys</li>
-                                        </div>
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
-                                                <span>
-                                                    <i class="bi-gear-fill"></i>
-                                                </span>
-                                                MECHANICAL ENGINEERING
-                                            </h5>
-                                            <li>Mechanical Manufacturing</li>
-                                            <li>Mechanical Construction</li>
-                                            <li>Boiler, Making And Welding</li>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                </div>
-
-                                <!-- Bachelors Section -->
-                                <div class="row mt-2">
-                                    <h5 class="fw-bold text-center py-4" style="color: #DF5E5E;">BACHELORS DEGREE : HND
-                                        /
-                                        BTS + 1 YEARS
-                                    </h5>
-                                    <div class="col-lg">
-                                        <h5 class="fw-bold mt-2" style="color: #00A874;">
-                                            <span>
-                                                <i class="bi-tree-fill"></i>
-                                            </span>
-                                            AGRICULTURE AND ENVIROMENTAL
-                                            SCIENCE
-                                        </h5>
-                                        <li>Agriculture And Food Science</li>
-                                        <li>Animal Production Tech</li>
-                                        <li>Crop Production Tech</li>
-                                        <li>Agropastoral Advicer</li>
-                                        <li> Agropastoral Entrepreneur</li>
-                                    </div>
-                                    <div class="col-lg">
-                                        <h5 class="fw-bold mt-2" style="color: #00A874;">
-                                            <span>
-                                                <i class="bi bi-droplet-fill me-2"></i>
-                                            </span>
-                                            PETROLEUM AND MINING
-                                            ENGINEERING
-                                        </h5>
-                                        <li>Mining Engineering</li>
-                                        <li>Petroleum Engineering</li>
-                                        <li>Petroleum Logistics</li>
-                                    </div>
-                                    <hr>
-                                    <!-- second row -->
-                                    <div class="row mt-3">
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00A874;">
-                                                <span>
-                                                    <i class="bi-lightning-fill"></i>
-                                                </span>
-                                                ELECTRICAL AND ELECTRONIC
-                                                ENG
-                                            </h5>
-                                            <li>Electronics</li>
-                                            <li>Electrical Power Engineering</li>
+                                            <li>Crop Production Tech</li>
+                                            <li>Agropastoral Advicer</li>
+                                            <li> Agropastoral Entrepreneur</li>
                                         </div>
                                         <div class="col-lg">
                                             <h5 class="fw-bold mt-2" style="color: #00A874;">
-                                                <span>
-                                                    <i class="bi-building-fill"></i>
-                                                </span>
-                                                CIVIL ENGINEERING
-                                            </h5>
-                                            <li>Civil Engineering Technology</li>
-                                            <li>Roads And Civil Engineering</li>
-                                            <li>Topography</li>
-                                        </div>
-                                    </div>
-                                    <hr>
-
-                                </div>
-
-                                <!-- Masters Section -->
-                                <div class="row mt-2">
-                                    <!-- Content for Masters -->
-                                    <!-- first row -->
-                                    <div class="row mt-3">
-                                        <h5 class="fw-bold text-center py-4" style="color: #DF5E5E;">
-                                            MASTERS DEGREE: BACHELORS + 2 YEARS
-                                        </h5>
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E">
-                                                <span>
-                                                    <i class="bi-tree-fill"></i>
-                                                </span>
-                                                AGRICULTURE AND ENVIROMENTAL
-                                                SCIENCE
-                                            </h5>
-                                            <ul>
-                                                <li>Agriculture And Food Science</li>
-                                                <li>Animal Production Tech</li>
-                                                <li>Crop Production Tech</li>
-                                                <li>Agropastoral Advicer</li>
-                                                <li> Agropastoral Entrepreneur</li>
-                                                <li> Agriculture Production</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E">
-                                                <span>
-                                                    <i class="bi-building-fill"></i>
-                                                </span>
-                                                CIVIL ENGINEERING
-                                            </h5>
-
-                                            <li>Civil Engineering Technology</li>
-                                            <li>Roads And Civil Engineering</li>
-                                            <li>Topography</li>
-
-                                            <!--  SECOND FIELD -->
-                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
-                                                <span>
-                                                    <i class="bi-lightning-fill"></i>
-                                                </span>
-                                                ELECTRICAL AND ELECTRONIC ENG
-                                            </h5>
-                                            <li>Electronics</li>
-                                            <li>Electrical Power Engineering</li>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <!-- SECOND ROW  -->
-                                    <div class="row mt-3">
-                                        <div class="col-lg">
-                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
                                                 <span>
                                                     <i class="bi bi-droplet-fill me-2"></i>
                                                 </span>
@@ -411,358 +416,457 @@
                                                 ENGINEERING
                                             </h5>
                                             <li>Mining Engineering</li>
-                                            <li>Petroleum Reservoir Engineering</li>
+                                            <li>Petroleum Engineering</li>
+                                            <li>Petroleum Logistics</li>
+                                        </div>
+                                        <hr>
+                                        <!-- second row -->
+                                        <div class="row mt-3">
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00A874;">
+                                                    <span>
+                                                        <i class="bi-lightning-fill"></i>
+                                                    </span>
+                                                    ELECTRICAL AND ELECTRONIC
+                                                    ENG
+                                                </h5>
+                                                <li>Electronics</li>
+                                                <li>Electrical Power Engineering</li>
+                                            </div>
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00A874;">
+                                                    <span>
+                                                        <i class="bi-building-fill"></i>
+                                                    </span>
+                                                    CIVIL ENGINEERING
+                                                </h5>
+                                                <li>Civil Engineering Technology</li>
+                                                <li>Roads And Civil Engineering</li>
+                                                <li>Topography</li>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                    </div>
+
+                                    <!-- Masters Section -->
+                                    <div class="row mt-2">
+                                        <!-- Content for Masters -->
+                                        <!-- first row -->
+                                        <div class="row mt-3">
+                                            <h5 class="fw-bold text-center py-4" style="color: #DF5E5E;">
+                                                MASTERS DEGREE: BACHELORS + 2 YEARS
+                                            </h5>
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E">
+                                                    <span>
+                                                        <i class="bi-tree-fill"></i>
+                                                    </span>
+                                                    AGRICULTURE AND ENVIROMENTAL
+                                                    SCIENCE
+                                                </h5>
+                                                <ul>
+                                                    <li>Agriculture And Food Science</li>
+                                                    <li>Animal Production Tech</li>
+                                                    <li>Crop Production Tech</li>
+                                                    <li>Agropastoral Advicer</li>
+                                                    <li> Agropastoral Entrepreneur</li>
+                                                    <li> Agriculture Production</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E">
+                                                    <span>
+                                                        <i class="bi-building-fill"></i>
+                                                    </span>
+                                                    CIVIL ENGINEERING
+                                                </h5>
+
+                                                <li>Civil Engineering Technology</li>
+                                                <li>Roads And Civil Engineering</li>
+                                                <li>Topography</li>
+
+                                                <!--  SECOND FIELD -->
+                                                <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                    <span>
+                                                        <i class="bi-lightning-fill"></i>
+                                                    </span>
+                                                    ELECTRICAL AND ELECTRONIC ENG
+                                                </h5>
+                                                <li>Electronics</li>
+                                                <li>Electrical Power Engineering</li>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- SECOND ROW  -->
+                                        <div class="row mt-3">
+                                            <div class="col-lg">
+                                                <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                    <span>
+                                                        <i class="bi bi-droplet-fill me-2"></i>
+                                                    </span>
+                                                    PETROLEUM AND MINING
+                                                    ENGINEERING
+                                                </h5>
+                                                <li>Mining Engineering</li>
+                                                <li>Petroleum Reservoir Engineering</li>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- for images -->
+                                    <div class="row mt-5 g-4">
+                                        <h2 class="text-lead" style="color: #00633E;">Photo Gallery</h2>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/civil engineering students at onsite.jpg"
+                                                    class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
+                                                    alt="civil engineering students at onsite">
+                                                <p>level one students on onsite training</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/defense.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="defense project">
+                                                <p>civil engineering student during defense</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/civil at onsite traing2.jpg"
+                                                    class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
+                                                    alt="civil at onsite traing2">
+                                                <p>level one students on onsite training</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- second section of images -->
+                                    <div class="row mt-3 g-4">
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/engineering/e1.jpg"
+                                                    class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
+                                                    alt="civil engineering students at onsite">
+                                                <p>INESAT students at excavator training</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/engineering/e2.jpg"
+                                                    class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
+                                                    alt="defense project">
+                                                <p>INESAT field training on-site</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/engineering/e3.jpg"
+                                                    class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
+                                                    alt="civil at onsite traing2">
+                                                <p>INESAT VR simulation class</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- for images -->
-                                <div class="row mt-5 g-4">
-                                    <h2 class="text-lead" style="color: #00633E;">Photo Gallery</h2>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/civil engineering students at onsite.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="civil engineering students at onsite">
-                                            <p>level one students on onsite training</p>
+                                <!-- Business content -->
+                                <div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="business-tab">
+                                    <h4 class="fw-bold mt-2">School Of Business Administration</h4>
+                                    <!-- for national diploma -->
+                                    <!-- FIRST ROW -->
+                                    <div class="row mt-1">
+                                        <div class="col-lg">
+                                            <h5 class="fw-bold py-4" style="color: #00633E;">NATIONAL DIPLOMA : BACC / A
+                                                LEVELS
+                                                + 1
+                                                YEAR</h5>
+                                            <li>Office Automation Secretaryship</li>
+                                            <li>Bilingual Secretaryship</li>
+                                            <li>Computerized Accounting And Management</li>
+                                            <li>Management Of Civil Society Organization </li>
+                                            <li>Production Of Graphic Design</li>
+                                            <li>Project Management</li>
+                                            <li>Assistant Managers</li>
+                                            <li>Hotel Management</li>
+                                            <li>Digital Marketing</li>
+                                            <li>Management Of Information System</li>
+                                            <li>E-commerce</li>
+                                            <li>Entrepreneurship And Information Technology</li>
+                                            <li>Hospitality Management</li>
+                                            <li>Tourism Management</li>
+                                            <li>Customs And Transit</li>
+                                            <li>Law</li>
+                                        </div>
+                                        <div class="col-lg">
+                                            <h5 class="fw-bold py-4" style="color: #00633E;">HIGHER NATIONAL DIPLOMA :
+                                                BACC
+                                                / A
+                                                LEVELS + 2 YEAR</h5>
+                                            <li> Management Of Non-Governmental Organization (NGO S)</li>
+                                            <li>Logistics And Transport Management</li>
+                                            <li>Information System Management</li>
+                                            <li>Local Government Taxation</li>
+                                            <li>Local Government Administration</li>
+                                            <li>Project Management</li>
+                                            <li>Quality Management</li>
+                                            <li>Sport Management</li>
+                                            <li>Statistics</li>
+                                            <li>Events Management</li>
+                                            <li>Port Shipping Management</li>
+                                            <li>Marketing Trade-Sales</li>
+                                            <li>International Trade</li>
+                                            <li>Microfinance</li>
+                                            <li>Accountancy</li>
+                                            <li>Banking And Finance</li>
+                                            <li>Assistant Managers</li>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/defense.jpg" class="img-fluid rounded w-100 h-100"
-                                                style="object-fit: cover;" alt="defense project">
-                                            <p>civil engineering student during defense</p>
+                                    <hr>
+                                    <!-- second row -->
+                                    <div class="row py-4 mt-1">
+                                        <div class="col-lg">
+                                            <h5 class="fw-bold py-4" style="color: #00633E;">BACHELORS DEGREE: HND/ BTS
+                                                / +
+                                                1
+                                                YEAR
+                                            </h5>
+                                            <li>Accountancy</li>
+                                            <li>Banking And Finance</li>
+                                            <li>Management</li>
+                                            <li>Marketing</li>
+                                            <li>Insurance</li>
+                                            <li>Project Management</li>
+                                            <li>Logistics And Transport Management</li>
+                                            <li>Administrative Assistant</li>
+                                            <li>Local Government And Decentralized Management</li>
+                                            <li>Port And Terminal Operation Management</li>
+                                        </div>
+                                        <div class="col-lg">
+                                            <h5 class="fw-bold py-4" style="color: #00633E;">MASTERS DEGREE: BACHELORS +
+                                                2
+                                                YEAR
+                                            </h5>
+                                            <li>Accounting And Finance</li>
+                                            <li>Banking And Finance</li>
+                                            <li>Auditing And Management Control </li>
+                                            <li>Project Management</li>
+                                            <li>Logistics And Transport Management</li>
+                                            <li>Human Resource Management</li>
+                                            <li>Strategic Marketing And Management</li>
+                                            <li>Information System Management</li>
+                                            <li>Insurance</li>
+                                            <li>Advertising And Public Relation</li>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/civil at onsite traing2.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="civil at onsite traing2">
-                                            <p>level one students on onsite training</p>
+                                    <!-- images sections -->
+                                    <div class="row mt-5 mb-5 g-4 ">
+                                        <h2 class="text-lead" style="color: #00633E;">Photo Gallery</h2>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/business/b3.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="computer on free trip">
+                                                <p class="py-2">Hands-On Training in Business Software</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/business/b2.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="free trip">
+                                                <p class="py-2">Strategy Session: Teamwork in the Business Department
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/business/b1.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="computer onsite training">
+                                                <p class="py-2">Exploring Entrepreneurship and Innovation in the Lab</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- second section of images -->
-                                <div class="row mt-3 g-4">
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/engineering/e1.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="civil engineering students at onsite">
-                                            <p>INESAT students at excavator training</p>
+                                <!-- Bio-Medical content -->
+                                <div class="tab-pane fade" id="biomedical" role="tabpanel"
+                                    aria-labelledby="biomedical-tab">
+                                    <h4 class="fw-bold mt-2">School Of Bio-Medical Sciences</h4>
+                                    <!-- Add your bio-medical content here -->
+                                    <div class="row mt-4">
+                                        <div class="col-md">
+                                            <li>Nursing</li>
+                                            <li>Midwifery</li>
+                                            <li>Medical Laboratory Science</li>
+                                        </div>
+                                        <div class="col-md">
+                                            <li>Pharmacy Technology</li>
+                                            <li>Physiotherapy</li>
+                                            <li>Medical Imagery</li>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/engineering/e2.jpg" class="img-fluid rounded w-100 h-100"
-                                                style="object-fit: cover;" alt="defense project">
-                                            <p>INESAT field training on-site</p>
+                                    <!-- images sections -->
+                                    <div class="row mt-5 g-4 ">
+                                        <h2 class="text-lead" style="color: #00633E;">Photo Gallery</h2>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/boimedical/1.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="computer on free trip">
+                                                <p class="py-3">Mastering Diagnostic Techniques in the Lab</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/boimedical/2.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="free trip">
+                                                <p class="py-3">Medical Students Performing Routine Check-Ups</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/boimedical/3.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="computer onsite training">
+                                                <p class="py-3">Hands-On Laboratory Practice</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/engineering/e3.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="civil at onsite traing2">
-                                            <p>INESAT VR simulation class</p>
+                                    <!-- second section of image -->
+                                    <div class="row mt-4 mb-5 g-4">
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/boimedical/4.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="computer on free trip">
+                                                <p class="py-3">Promoting Health Education Beyond the Classroom</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/boimedical/5.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="free trip">
+                                                <p class="py-3">INEISAT Students March for Community Health Awareness
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 250px;">
+                                                <img src="images/boimedical/6.jpg" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="computer onsite training">
+                                                <p class="py-3">Taking the Lead in Public Health: A Student-Led
+                                                    Awareness Walk</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                                <!-- Technology content -->
+                                <div class="tab-pane fade" id="Technology" role="tabpanel"
+                                    aria-labelledby="Technology-tab">
+                                    <h4 class="fw-bold mt-2">School Of Technology</h4>
+                                    <!-- HND SECTION -->
+                                    <div class="row mt-4">
+                                        <h5 class="fw-bold  text-center py-4" style="color: #DF5E5E;">
+                                            HIGHER NATIONAL
+                                            DIPLOMA(HND) : BACC/A LEVELS + 2 YEARS
+                                        </h5>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                <span>
+                                                    <i class="bi bi-laptop"></i>
+                                                </span>
+                                                COMPUTER ENGINEERING
+                                            </h5>
+                                            <li>Software Engineering</li>
+                                            <li>Computer Science And Network</li>
+                                            <li>Database Management</li>
+                                            <li>Computer Maintenace</li>
+                                            <li>Computer Graphics And Web Design</li>
+                                            <li>E-commerce And Digital Marketing</li>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <h5 class="fw-bold mt-2" style="color: #00633E;">NETWORK AND
+                                                TELECOMMUNICATIONS
+                                            </h5>
+                                            <li>Telecommunication</li>
+                                            <li> Network Security</li>
+                                        </div>
+                                    </div>
+                                    <!-- second row -->
+                                    <div class="row mt-4">
+                                        <h5 class="fw-bold text-center py-4" style="color: #DF5E5E;">
+                                            BACHELORS DEGREE : HND
+                                            /
+                                            BTS + 1 YEARS
+                                        </h5>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <h5 class="fw-bold mt-2" style="color: #00633E;">COMPUTER ENGINEERING</h5>
+                                            <li>Software Engineering</li>
+                                            <li>Computer Science And Network</li>
+                                            <li>Database Management</li>
+                                            <li>Computer Maintenace</li>
+                                            <li>Computer Graphics And Web Design</li>
+                                            <li>E-commerce And Digital Marketing</li>
+                                        </div>
+                                        <div class="col-12 col-md-6 col-lg-4">
+                                            <h5 class="fw-bold mt-2" style="color: #00633E;">NETWORK AND
+                                                TELECOMMUNICATIONS
+                                            </h5>
+                                            <li>Telecommunication</li>
+                                            <li> Network Security</li>
+                                        </div>
 
-                            <!-- Business content -->
-                            <div class="tab-pane fade" id="business" role="tabpanel" aria-labelledby="business-tab">
-                                <h4 class="fw-bold mt-2">School Of Business Administration</h4>
-                                <!-- for national diploma -->
-                                <!-- FIRST ROW -->
-                                <div class="row mt-1">
-                                    <div class="col-lg">
-                                        <h5 class="fw-bold py-4" style="color: #00633E;">NATIONAL DIPLOMA : BACC / A
-                                            LEVELS
-                                            + 1
-                                            YEAR</h5>
-                                        <li>Office Automation Secretaryship</li>
-                                        <li>Bilingual Secretaryship</li>
-                                        <li>Computerized Accounting And Management</li>
-                                        <li>Management Of Civil Society Organization </li>
-                                        <li>Production Of Graphic Design</li>
-                                        <li>Project Management</li>
-                                        <li>Assistant Managers</li>
-                                        <li>Hotel Management</li>
-                                        <li>Digital Marketing</li>
-                                        <li>Management Of Information System</li>
-                                        <li>E-commerce</li>
-                                        <li>Entrepreneurship And Information Technology</li>
-                                        <li>Hospitality Management</li>
-                                        <li>Tourism Management</li>
-                                        <li>Customs And Transit</li>
-                                        <li>Law</li>
                                     </div>
-                                    <div class="col-lg">
-                                        <h5 class="fw-bold py-4" style="color: #00633E;">HIGHER NATIONAL DIPLOMA : BACC
-                                            / A
-                                            LEVELS + 2 YEAR</h5>
-                                        <li> Management Of Non-Governmental Organization (NGO S)</li>
-                                        <li>Logistics And Transport Management</li>
-                                        <li>Information System Management</li>
-                                        <li>Local Government Taxation</li>
-                                        <li>Local Government Administration</li>
-                                        <li>Project Management</li>
-                                        <li>Quality Management</li>
-                                        <li>Sport Management</li>
-                                        <li>Statistics</li>
-                                        <li>Events Management</li>
-                                        <li>Port Shipping Management</li>
-                                        <li>Marketing Trade-Sales</li>
-                                        <li>International Trade</li>
-                                        <li>Microfinance</li>
-                                        <li>Accountancy</li>
-                                        <li>Banking And Finance</li>
-                                        <li>Assistant Managers</li>
-                                    </div>
-                                </div>
-                                <hr>
-                                <!-- second row -->
-                                <div class="row py-4 mt-1">
-                                    <div class="col-lg">
-                                        <h5 class="fw-bold py-4" style="color: #00633E;">BACHELORS DEGREE: HND/ BTS / +
-                                            1
-                                            YEAR
+                                    <!-- third row -->
+                                    <div class="row mt-4">
+                                        <h5 class="fw-bold text-center py-4" style="color: #DF5E5E;">
+                                            MASTERS DEGREE: BACHELORS + 2 YEARS
                                         </h5>
-                                        <li>Accountancy</li>
-                                        <li>Banking And Finance</li>
-                                        <li>Management</li>
-                                        <li>Marketing</li>
-                                        <li>Insurance</li>
-                                        <li>Project Management</li>
-                                        <li>Logistics And Transport Management</li>
-                                        <li>Administrative Assistant</li>
-                                        <li>Local Government And Decentralized Management</li>
-                                        <li>Port And Terminal Operation Management</li>
-                                    </div>
-                                    <div class="col-lg">
-                                        <h5 class="fw-bold py-4" style="color: #00633E;">MASTERS DEGREE: BACHELORS + 2
-                                            YEAR
-                                        </h5>
-                                        <li>Accounting And Finance</li>
-                                        <li>Banking And Finance</li>
-                                        <li>Auditing And Management Control </li>
-                                        <li>Project Management</li>
-                                        <li>Logistics And Transport Management</li>
-                                        <li>Human Resource Management</li>
-                                        <li>Strategic Marketing And Management</li>
-                                        <li>Information System Management</li>
-                                        <li>Insurance</li>
-                                        <li>Advertising And Public Relation</li>
-                                    </div>
-                                </div>
-                                <!-- images sections -->
-                                 <div class="row mt-5 mb-5 g-4 ">
-                                    <h2 class="text-lead" style="color: #00633E;">Photo Gallery</h2>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/business/b3.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="computer on free trip">
-                                            <p class="py-2">Hands-On Training in Business Software</p>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <h5 class="fw-bold mt-2" style="color: #00633E;">COMPUTER ENGINEERING</h5>
+                                            <li>Software Engineering</li>
+                                            <li> Computer Network Engineering</li>
+                                            <li>Database Management And Information Systems</li>
+                                            <li>Computer Maintenance Hardware And Systems Maintenance</li>
+                                            <li> Graphics And Webdesign</li>
+                                            <li>E-commerce</li>
+                                            <li>Digital Marketing</li>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/business/b2.jpg" class="img-fluid rounded w-100 h-100"
-                                                style="object-fit: cover;" alt="free trip">
-                                            <p class="py-2">Strategy Session: Teamwork in the Business Department</p>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <h5 class="fw-bold mt-2" style="color: #00633E;">NETWORK AND
+                                                TELECOMMUNICATION</h5>
+                                            <li>Telecommunication</li>
+                                            <li>Network And Securitys</li>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/business/b1.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="computer onsite training">
-                                            <p class="py-2">Exploring Entrepreneurship and Innovation in the Lab</p>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <h5 class="fw-bold mt-2" style="color: #00633E;">
+                                                CYBER SECURITY
+                                            </h5>
+                                            <li>Digital Forensic Analysis</li>
+                                            <li>Cyber Crime-Crytology</li>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Bio-Medical content -->
-                            <div class="tab-pane fade" id="biomedical" role="tabpanel" aria-labelledby="biomedical-tab">
-                                <h4 class="fw-bold mt-2">School Of Bio-Medical Sciences</h4>
-                                <!-- Add your bio-medical content here -->
-                                <div class="row mt-4">
-                                    <div class="col-md">
-                                        <li>Nursing</li>
-                                        <li>Midwifery</li>
-                                        <li>Medical Laboratory Science</li>
-                                    </div>
-                                    <div class="col-md">
-                                        <li>Pharmacy Technology</li>
-                                        <li>Physiotherapy</li>
-                                        <li>Medical Imagery</li>
-                                    </div>
-                                </div>
-                                <!-- images sections -->
-                                <div class="row mt-5 g-4 ">
-                                    <h2 class="text-lead" style="color: #00633E;">Photo Gallery</h2>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/boimedical/1.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="computer on free trip">
-                                            <p class="py-3">Mastering Diagnostic Techniques in the Lab</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/boimedical/2.jpg" class="img-fluid rounded w-100 h-100"
-                                                style="object-fit: cover;" alt="free trip">
-                                            <p class="py-3">Medical Students Performing Routine Check-Ups</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/boimedical/3.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="computer onsite training">
-                                            <p class="py-3">Hands-On Laboratory Practice</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                   <!-- second section of image -->
-                                <div class="row mt-4 mb-5 g-4">
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/boimedical/4.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="computer on free trip">
-                                            <p class="py-3">Promoting Health Education Beyond the Classroom</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/boimedical/5.jpg" class="img-fluid rounded w-100 h-100"
-                                                style="object-fit: cover;" alt="free trip">
-                                            <p  class="py-3">INEISAT Students March for Community Health Awareness</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 250px;">
-                                            <img src="images/boimedical/6.jpg"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="computer onsite training">
-                                            <p class="py-3">Taking the Lead in Public Health: A Student-Led Awareness Walk</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Technology content -->
-                            <div class="tab-pane fade" id="Technology" role="tabpanel" aria-labelledby="Technology-tab">
-                                <h4 class="fw-bold mt-2">School Of Technology</h4>
-                                <!-- HND SECTION -->
-                                <div class="row mt-4">
-                                    <h5 class="fw-bold  text-center py-4" style="color: #DF5E5E;">
-                                        HIGHER NATIONAL
-                                        DIPLOMA(HND) : BACC/A LEVELS + 2 YEARS
-                                    </h5>
-                                    <div class="col-12 col-md-6 col-lg-4">
-                                        <h5 class="fw-bold mt-2" style="color: #00633E;">
-                                            <span>
-                                                <i class="bi bi-laptop"></i>
-                                            </span>
-                                            COMPUTER ENGINEERING
-                                        </h5>
-                                        <li>Software Engineering</li>
-                                        <li>Computer Science And Network</li>
-                                        <li>Database Management</li>
-                                        <li>Computer Maintenace</li>
-                                        <li>Computer Graphics And Web Design</li>
-                                        <li>E-commerce And Digital Marketing</li>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4">
-                                        <h5 class="fw-bold mt-2" style="color: #00633E;">NETWORK AND TELECOMMUNICATIONS
-                                        </h5>
-                                        <li>Telecommunication</li>
-                                        <li> Network Security</li>
-                                    </div>
-                                </div>
-                                <!-- second row -->
-                                <div class="row mt-4">
-                                    <h5 class="fw-bold text-center py-4" style="color: #DF5E5E;">
-                                        BACHELORS DEGREE : HND
-                                        /
-                                        BTS + 1 YEARS
-                                    </h5>
-                                    <div class="col-12 col-md-6 col-lg-4">
-                                        <h5 class="fw-bold mt-2" style="color: #00633E;">COMPUTER ENGINEERING</h5>
-                                        <li>Software Engineering</li>
-                                        <li>Computer Science And Network</li>
-                                        <li>Database Management</li>
-                                        <li>Computer Maintenace</li>
-                                        <li>Computer Graphics And Web Design</li>
-                                        <li>E-commerce And Digital Marketing</li>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4">
-                                        <h5 class="fw-bold mt-2" style="color: #00633E;">NETWORK AND TELECOMMUNICATIONS
-                                        </h5>
-                                        <li>Telecommunication</li>
-                                        <li> Network Security</li>
                                     </div>
 
-                                </div>
-                                <!-- third row -->
-                                <div class="row mt-4">
-                                    <h5 class="fw-bold text-center py-4" style="color: #DF5E5E;">
-                                        MASTERS DEGREE: BACHELORS + 2 YEARS
-                                    </h5>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <h5 class="fw-bold mt-2" style="color: #00633E;">COMPUTER ENGINEERING</h5>
-                                        <li>Software Engineering</li>
-                                        <li> Computer Network Engineering</li>
-                                        <li>Database Management And Information Systems</li>
-                                        <li>Computer Maintenance Hardware And Systems Maintenance</li>
-                                        <li> Graphics And Webdesign</li>
-                                        <li>E-commerce</li>
-                                        <li>Digital Marketing</li>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <h5 class="fw-bold mt-2" style="color: #00633E;">NETWORK AND
-                                            TELECOMMUNICATION</h5>
-                                        <li>Telecommunication</li>
-                                        <li>Network And Securitys</li>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <h5 class="fw-bold mt-2" style="color: #00633E;">
-                                            CYBER SECURITY
-                                        </h5>
-                                        <li>Digital Forensic Analysis</li>
-                                        <li>Cyber Crime-Crytology</li>
-                                    </div>
-                                </div>
-
-                                <!-- for images -->
-                                <div class="row mt-5 g-4 ">
-                                    <h2 class="text-lead" style="color: #00633E;">Photo Gallery</h2>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 300px;">
-                                            <img src="images/computer on free trip.webp"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="computer on free trip">
-                                            <p>Level two students in matrix telecom</p>
+                                    <!-- for images -->
+                                    <div class="row mt-5 g-4 ">
+                                        <h2 class="text-lead" style="color: #00633E;">Photo Gallery</h2>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 300px;">
+                                                <img src="images/computer on free trip.webp"
+                                                    class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
+                                                    alt="computer on free trip">
+                                                <p>Level two students in matrix telecom</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 300px;">
-                                            <img src="images/free trip.webp" class="img-fluid rounded w-100 h-100"
-                                                style="object-fit: cover;" alt="free trip">
-                                            <p>Level two students in matrix telecom</p>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 300px;">
+                                                <img src="images/free trip.webp" class="img-fluid rounded w-100 h-100"
+                                                    style="object-fit: cover;" alt="free trip">
+                                                <p>Level two students in matrix telecom</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 col-lg-4 mb-4">
-                                        <div class="image-container" style="height: 300px;">
-                                            <img src="images/computer onsite training.webp"
-                                                class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
-                                                alt="computer onsite training">
-                                            <p>level one students on onsite training</p>
+                                        <div class="col-12 col-md-6 col-lg-4 mb-4">
+                                            <div class="image-container" style="height: 300px;">
+                                                <img src="images/computer onsite training.webp"
+                                                    class="img-fluid rounded w-100 h-100" style="object-fit: cover;"
+                                                    alt="computer onsite training">
+                                                <p>level one students on onsite training</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -772,8 +876,7 @@
                 </div>
             </div>
         </div>
-    </div>
-   </section>
+    </section>
     <!--
    the footer, which is the last component that is 
    found at the bottom of a webpage.
@@ -784,20 +887,26 @@
                 <div class="col-lg d-flex flex-column ">
                     <p class="h5 mb-3  ">Links</p>
                     <ul class="list-unstyled">
-                      <li><a class="text-decoration-underline " style="color: #666; font-family: 'Poppins', sans-serif; "
-                          href="index.html">Home</a></li>
-                      <li><a class="text-decoration-underline   " style="color: #666; font-family: 'Poppins', sans-serif; "
-                          href="AboutUs.html">About Us</a></li>
-                      <li><a class="text-decoration-underline   " style="color: #666; font-family: 'Poppins', sans-serif; "
-                          href="ContactUs.html">ContactUs</a></li>
-                      <li><a class="text-decoration-underline  " style="color: #666; font-family: 'Poppins', sans-serif; "
-                          href="Academic.html">Academic</a></li>
-                      <li><a class="text-decoration-underline  " style="color: #666; font-family: 'Poppins', sans-serif; "
-                          href="Admision.html">Admission</a></li>
-                      <li><a class="text-decoration-underline   " style="color: #666; font-family: 'Poppins', sans-serif; "
-                          href="News-Events.html">News-Events</a></li>
+                        <li><a class="text-decoration-underline "
+                                style="color: #666; font-family: 'Poppins', sans-serif; " href="index.html">Home</a>
+                        </li>
+                        <li><a class="text-decoration-underline   "
+                                style="color: #666; font-family: 'Poppins', sans-serif; " href="AboutUs.html">About
+                                Us</a></li>
+                        <li><a class="text-decoration-underline   "
+                                style="color: #666; font-family: 'Poppins', sans-serif; "
+                                href="ContactUs.html">ContactUs</a></li>
+                        <li><a class="text-decoration-underline  "
+                                style="color: #666; font-family: 'Poppins', sans-serif; "
+                                href="Academic.html">Academic</a></li>
+                        <li><a class="text-decoration-underline  "
+                                style="color: #666; font-family: 'Poppins', sans-serif; "
+                                href="Admision.html">Admission</a></li>
+                        <li><a class="text-decoration-underline   "
+                                style="color: #666; font-family: 'Poppins', sans-serif; "
+                                href="News-Events.html">News-Events</a></li>
                     </ul>
-                  </div>
+                </div>
 
                 <!-- secondcolumn -->
                 <div class="col-lg d-flex flex-column py-2align-items-center ">
