@@ -1,5 +1,3 @@
-
-
 /* the style below are to work for the entire body of the page*/
 body {
     font-family: 'Poppins', sans-serif;
@@ -38,8 +36,3 @@ hr {
     opacity: 0.1;
 }
 
-/* style to center the text on the hero image */
-#centerThetext {
-    bottom: 30%;
-
-}
