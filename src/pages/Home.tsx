@@ -152,11 +152,11 @@ const Home = () => {
                     <div className="grid md:grid-cols-2 gap-8">
                         <motion.div whileHover={{ scale: 1.02 }} className="rounded-xl overflow-hidden shadow-2xl h-[450px] bg-black">
                             <video controls poster="public/images/secondpart.png" className="w-full h-full object-contain">
-                                <source src="/videos/Second part_1.mp4" type="video/mp4" />
+                                <source src="public/videos/Second part_1.mp4" type="video/mp4" />
                             </video>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.02 }} className="rounded-xl overflow-hidden shadow-2xl h-[450px] bg-black">
-                            <video controls poster="/images/design machine.png" className="w-full h-full object-contain">
+                            <video controls poster="public/images/design machine.png" className="w-full h-full object-contain">
                                 <source src="public/videos/design machine.mp4" type="video/mp4" />
                             </video>
                         </motion.div>
