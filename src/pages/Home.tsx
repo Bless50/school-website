@@ -151,13 +151,13 @@ const Home = () => {
                     </Section>
                     <div className="grid md:grid-cols-2 gap-8">
                         <motion.div whileHover={{ scale: 1.02 }} className="rounded-xl overflow-hidden shadow-2xl h-[450px] bg-black">
-                            <video controls poster="/images/design machine.png" className="w-full h-full object-contain">
-                                <source src="/images/Second part_1.mp4" type="video/mp4" />
+                            <video controls poster="public/images/secondpart.png" className="w-full h-full object-contain">
+                                <source src="/videos/Second part_1.mp4" type="video/mp4" />
                             </video>
                         </motion.div>
                         <motion.div whileHover={{ scale: 1.02 }} className="rounded-xl overflow-hidden shadow-2xl h-[450px] bg-black">
                             <video controls poster="/images/design machine.png" className="w-full h-full object-contain">
-                                <source src="/images/design machine.mp4" type="video/mp4" />
+                                <source src="public/videos/design machine.mp4" type="video/mp4" />
                             </video>
                         </motion.div>
                     </div>
@@ -357,7 +357,7 @@ const Home = () => {
                         </div>
                         <div className="order-1 lg:order-2 rounded-2xl overflow-hidden shadow-lg bg-black">
                             <video controls poster="/images/doualaPoster.png" className="w-full h-full object-cover">
-                                <source src="/images/iniesat-douala.mp4" type="video/mp4" />
+                                <source src="/videos/iniesat-douala.mp4" type="video/mp4" />
                             </video>
                         </div>
                     </div>
