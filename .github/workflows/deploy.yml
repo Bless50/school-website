@@ -18,7 +18,7 @@ jobs:
           node-version: 20 # Matching a modern stable version
 
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Build Project
         run: pnpm run build
