@@ -8,12 +8,13 @@
   RewriteRule . /index.html [L]
 </IfModule>
 
-# Handle Video Content Correcty
+# Handle Video Content Correctly
 <IfModule mod_headers.c>
-    # Enable range requests for videos (allows seeking)
-    Header set Accept-Ranges bytes
+    <FilesMatch "\.(mp4|webm|ogv)$">
+        # Enable range requests for videos (allows seeking)
+        Header set Accept-Ranges bytes
+    </FilesMatch>
 </IfModule>
-
 <IfModule mod_mime.c>
     AddType video/mp4 .mp4
     AddType video/webm .webm
